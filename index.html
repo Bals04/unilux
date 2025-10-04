@@ -33,6 +33,8 @@
         }
     </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -175,6 +177,120 @@
         #preloader {
             transition: opacity 1.5s ease;
         }
+
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-cream {
+            background-color: #f5f3f0;
+        }
+
+        .text-charcoal {
+            color: #2c2c2c;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .carousel-slide {
+                min-width: 50%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .carousel-slide {
+                min-width: 33.333%;
+            }
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-btn:hover {
+            background: #C9A961;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn-prev {
+            left: 1rem;
+        }
+
+        .carousel-btn-next {
+            right: 1rem;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: #2c2c2c;
+            width: 24px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -241,7 +357,7 @@
 
     <section id="collection" class="py-24 lg:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16 fade-in">
+            <div class="text-center mb-16">
                 <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
                     Signature Collection
                 </h2>
@@ -250,47 +366,23 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-                <div class="product-card bg-cream rounded-sm overflow-hidden fade-in">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1614179689702-355944cd0918?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="The Noir Classic" class="w-full h-80 object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl font-semibold mb-2">The Noir Classic</h3>
-                        <p class="font-sans text-sm text-charcoal/70 mb-4">Italian Calfskin</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-sans text-lg font-medium">₱6,500</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card bg-cream rounded-sm overflow-hidden fade-in">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=798&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="The Ivory Tote" class="w-full h-80 object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl font-semibold mb-2">The Ivory Tote</h3>
-                        <p class="font-sans text-sm text-charcoal/70 mb-4">Pebbled Leather</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-sans text-lg font-medium">₱4,000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card bg-cream rounded-sm overflow-hidden fade-in">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1605733513597-a8f8341084e6?q=80&w=1529&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="The Cognac Crossbody" class="w-full h-80 object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl font-semibold mb-2">The Cognac Crossbody</h3>
-                        <p class="font-sans text-sm text-charcoal/70 mb-4">Vegetable-Tanned Leather</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-sans text-lg font-medium">₱4,500</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel(-1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+
+                <div class="carousel-track" id="carouselTrack"></div>
+
+                <button class="carousel-btn carousel-btn-next" onclick="moveCarousel(1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
             </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
     </section>
     <section class="py-24 lg:py-32 bg-cream">
@@ -402,6 +494,138 @@
                     preloader.style.display = "none";
                 }, 1200); // fade duration
             }, 1500); // keep loader visible for 1.5s after load
+        });
+
+        //CAROUSEL
+
+        // Product data object
+        const bags = [
+            {
+                name: "The Noir Classic",
+                material: "Italian Calfskin",
+                price: "₱6,500",
+                image: "https://images.unsplash.com/photo-1614179689702-355944cd0918?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                name: "The Ivory Tote",
+                material: "Pebbled Leather",
+                price: "₱4,000",
+                image: "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=798&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                name: "The Cognac Crossbody",
+                material: "Vegetable-Tanned Leather",
+                price: "₱4,500",
+                image: "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?q=80&w=1529&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                name: "The Burgundy Satchel",
+                material: "Full-Grain Leather",
+                price: "₱5,200",
+                image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800&auto=format&fit=crop"
+            },
+            {
+                name: "The Emerald Clutch",
+                material: "Suede Finish",
+                price: "₱3,800",
+                image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?q=80&w=800&auto=format&fit=crop"
+            },
+            {
+                name: "The Camel Weekender",
+                material: "Canvas & Leather",
+                price: "₱7,200",
+                image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop"
+            }
+        ];
+
+        let currentIndex = 0;
+        let itemsPerView = getItemsPerView();
+
+        // Initialize carousel
+        function initCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+
+            // Create slides
+            bags.forEach((bag, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                slide.innerHTML = `
+                    <div class="product-card bg-cream rounded-sm overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="${bag.image}"
+                                alt="${bag.name}" class="w-full h-80 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-semibold mb-2">${bag.name}</h3>
+                            <p class="font-sans text-sm text-charcoal/70 mb-4">${bag.material}</p>
+                            <div class="flex items-center justify-between">
+                                <span class="font-sans text-lg font-medium">${bag.price}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                track.appendChild(slide);
+            });
+
+
+            // Create dots
+            const totalDots = Math.ceil(bags.length / itemsPerView);
+            for (let i = 0; i < totalDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function getItemsPerView() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+
+        function moveCarousel(direction) {
+            const maxIndex = Math.ceil(bags.length / itemsPerView) - 1;
+            currentIndex += direction;
+
+            if (currentIndex < 0) currentIndex = maxIndex;
+            if (currentIndex > maxIndex) currentIndex = 0;
+
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const offset = -(currentIndex * 100);
+            track.style.transform = `translateX(${offset}%)`;
+
+            // Update dots
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const newItemsPerView = getItemsPerView();
+            if (newItemsPerView !== itemsPerView) {
+                itemsPerView = newItemsPerView;
+                currentIndex = 0;
+                document.getElementById('carouselTrack').innerHTML = '';
+                document.getElementById('carouselDots').innerHTML = '';
+                initCarousel();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            initCarousel();
         });
     </script>
 </body>
