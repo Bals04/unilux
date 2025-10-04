@@ -335,8 +335,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="fade-in rounded-full">
-                    <img src="/logo.png"
-                        alt="Craftsmanship" class="w-full h-auto rounded-full shadow-lg">
+                    <img src="/logo.png" alt="Craftsmanship" class="w-full h-auto rounded-full shadow-lg">
                 </div>
                 <div class="fade-in">
                     <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-tight">
@@ -362,7 +361,7 @@
                     Signature Collection
                 </h2>
                 <p class="font-sans text-lg text-charcoal/70 max-w-2xl mx-auto">
-                    Explore our most coveted designs, each a testament to timeless sophistication
+                    Explore our best-selling luxury bags, crafted to elevate your style with effortless sophistication.
                 </p>
             </div>
 
@@ -395,12 +394,10 @@
                     </svg>
                 </div>
                 <blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl font-medium mb-8 leading-relaxed">
-                    "An investment in timeless elegance. My bag from Uni Lux has become my most treasured
-                    possession—a true work of art."
+                    "The quality of the bag is incredible — almost identical to the original! Stitching,hardware logo,
+                    placement,feel and materials exceeded my expectations. Communication was smooth, and shipping was
+                    fast. Will definitely buy again and recommend you!"
                 </blockquote>
-                <p class="font-sans text-sm uppercase tracking-widest text-charcoal/70">
-                    — Isabella Chen, Doctor
-                </p>
             </div>
         </div>
     </section>
@@ -501,41 +498,57 @@
         // Product data object
         const bags = [
             {
-                name: "The Noir Classic",
-                material: "Italian Calfskin",
-                price: "₱6,500",
-                image: "https://images.unsplash.com/photo-1614179689702-355944cd0918?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                name: "Uni Lux",
+                image: "/1.jpg"
             },
             {
-                name: "The Ivory Tote",
-                material: "Pebbled Leather",
-                price: "₱4,000",
-                image: "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=798&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                name: "Uni Lux",
+                image: "/2.jpg"
             },
             {
-                name: "The Cognac Crossbody",
-                material: "Vegetable-Tanned Leather",
-                price: "₱4,500",
-                image: "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?q=80&w=1529&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                name: "Uni Lux",
+                image: "/3.jpg"
             },
             {
-                name: "The Burgundy Satchel",
-                material: "Full-Grain Leather",
-                price: "₱5,200",
-                image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800&auto=format&fit=crop"
+                name: "Uni Lux",
+                image: "/4.jpg"
             },
             {
-                name: "The Emerald Clutch",
-                material: "Suede Finish",
-                price: "₱3,800",
-                image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?q=80&w=800&auto=format&fit=crop"
+                name: "Uni Lux",
+                image: "/5.jpg"
             },
             {
-                name: "The Camel Weekender",
-                material: "Canvas & Leather",
-                price: "₱7,200",
-                image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800&auto=format&fit=crop"
-            }
+                name: "Uni Lux",
+                image: "/6.jpg"
+            },
+            {
+                name: "Uni Lux",
+                image: "/7.jpg"
+            },
+            {
+                name: "Uni Lux",
+                image: "/8.jpg"
+            },
+            {
+                name: "Uni Lux",
+                image: "/9.jpg"
+            },
+            {
+                name: "Uni Lux",
+                image: "/10.jpg"
+            },
+            {
+                name: "Uni Lux",
+                image: "/11.jpg"
+            },
+            {
+                name: "Uni Lux",
+                image: "/12.jpg"
+            },
+            {
+                name: "Uni Lux",
+                image: "/13.jpg"
+            },
         ];
 
         let currentIndex = 0;
@@ -555,13 +568,6 @@
                         <div class="overflow-hidden">
                             <img src="${bag.image}"
                                 alt="${bag.name}" class="w-full h-80 object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-serif text-2xl font-semibold mb-2">${bag.name}</h3>
-                            <p class="font-sans text-sm text-charcoal/70 mb-4">${bag.material}</p>
-                            <div class="flex items-center justify-between">
-                                <span class="font-sans text-lg font-medium">${bag.price}</span>
-                            </div>
                         </div>
                     </div>
                 `;
